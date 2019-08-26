@@ -3,6 +3,8 @@ require_relative('../models/destination')
 require_relative('../models/travel')
 require_relative('../models/experience')
 
+require('pry')
+
 user1 = User.new({
   "name" => "Rose",
   "home_location" => "Glasgow"
@@ -35,3 +37,6 @@ travel1 = Travel.new({
   })
 
 travel1.save
+
+binding.pry
+nil

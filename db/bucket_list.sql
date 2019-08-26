@@ -1,24 +1,33 @@
+DROP TABLE IF EXISTS travels;
 DROP TABLE IF EXISTS experiences;
 DROP TABLE IF EXISTS destinations;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-  id serial4 primary key,
+  id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  home_lacation VARCHAR(1024)
+  home_location VARCHAR(1024)
 );
 
 CREATE TABLE destinations (
-  id serial4 primary key,
-  name varchar(255),
-  priority int2,
-  reason_to_go text,
-  travel_method text
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  priority INT2,
+  reason_to_go TEXT,
+  travel_method TEXT,
+  visited_or_not BOOLEAN
 );
 
 CREATE TABLE experiences (
-  id serial4 primary key,
+  id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  description text,
-  FOREIGN KEY (id) REFERENCES (destinations)
-)
+  description TEXT,
+  destination_id INT4 REFERENCES destinations(id)
+);
+
+CREATE TABLE travels (
+  id SERIAL4 PRIMARY KEY,
+  user_id INT4 REFERENCES users(id),
+  destination_id INT4 REFERENCES destinations(id),
+  travel_date DATE
+);

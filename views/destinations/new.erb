@@ -1,0 +1,52 @@
+<form method="post" action="/destinations">
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  />
+
+  <label for="location">Location:</label>
+  <input
+  type="text"
+  name="location"
+  id="location-field"
+  />
+
+  <label for="priority">Destination Priority:</label>
+  <select name="value" id="priority-selection">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+
+  <label for="reason_to_go">Reason to Go:</label>
+  <input
+  type="text"
+  name="reason_to_go"
+  id="reason_to_go-field"
+  />
+
+  <label for="travel_method">Travel Method:</label>
+  <input
+  type="text"
+  name="travel_method"
+  id="travel_method-field"
+  />
+
+  <label for="visited_or_not">Already Visited:</label>
+  <input
+  type="boolean"
+  name="visited_or_not"
+  id="visited_or_not-field"
+  />
+
+  <input type="submit" value="Create Destination">
+</form>

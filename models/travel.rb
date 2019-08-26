@@ -29,5 +29,44 @@ class Travel
     @id = travel_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE travels
+    SET
+    (
+      travel_date,
+      destination_id,
+      user_id
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@travel_date, @destination_id, @user_id]
+    SqlRunner.run( sql, values )
+  end
+
+  def delete()
+    sql = "DELETE FROM travels
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.all()
+    sql = "SELECT * FROM travels"
+    travel_data = SqlRunner.run( sql )
+    result = travel_data.map { |travel_datum| Travel.new( travel_datum ) }
+    return result
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM travels
+    WHERE id = $1"
+    values = [id]
+    travel_datum = SqlRunner.run( sql, values )
+    result = Travel.new( travel_datum.first )
+    return result
+  end
+
 
 end

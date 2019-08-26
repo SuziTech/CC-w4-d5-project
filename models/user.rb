@@ -27,4 +27,42 @@ class User
     @id = user_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE users
+    SET
+    (
+      name,
+      home_location
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @home_location, @id]
+    SqlRunner.run( sql, values )
+  end
+
+  def delete()
+    sql = "DELETE FROM users
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.all()
+    sql = "SELECT * FROM users"
+    user_data = SqlRunner.run( sql )
+    result = user_data.map { |user_datum| User.new( user_datum ) }
+    return result
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM users
+    WHERE id = $1"
+    values = [id]
+    user_datum = SqlRunner.run( sql, values )
+    result = User.new( user_datum.first )
+    return result
+  end
+
 end

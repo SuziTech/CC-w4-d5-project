@@ -61,7 +61,7 @@ class Destination
   def self.all()
     sql = "SELECT * FROM destinations"
     destination_data = SqlRunner.run( sql )
-    result = destination_data.map { |destination_datum| PizzaOrder.new( destination_datum ) }
+    result = destination_data.map { |destination_datum| Destination.new( destination_datum ) }
     return result
   end
 
@@ -70,7 +70,7 @@ class Destination
     WHERE id = $1"
     values = [id]
     destination_datum = SqlRunner.run( sql, values )
-    result = PizzaOrder.new( destination_datum.first )
+    result = Destination.new( destination_datum.first )
     return result
   end
 

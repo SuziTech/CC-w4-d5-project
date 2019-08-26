@@ -1,39 +1,87 @@
-<form method="post" action="/pizza-orders/<%= @order.id %>">
-  <label for="first-name-field">First Name:</label>
+<form method="post" action="/destinations/<%= @destination.id %>">
+  <label for="name-field">Destination Name:</label>
   <input
   type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @order.first_name %>"
+  name="name"
+  id="name-field"
+  value="<%= @destination.name %>"
   />
 
-  <label for="last-name-field">Last Name:</label>
+  <label for="location-field">Location:</label>
   <input
   type="text"
-  name="last_name"
-  id="last-name-field"
-  value="<%= @order.last_name %>"
+  name="location"
+  id="location-field"
+  value="<%= @destination.location %>"
   />
 
-  <label for="pizza-selection">Select a pizza:</label>
-  <select name="topping" id="pizza-selection">
+  <label for="priority-selection">Select a priority:</label>
+  <select name="priority" id="priority-selection">
     <option
-    value="Margherita"
-    <%= "selected" if @order.topping == "Margherita" %>
-    >Margherita</option>
+    value="1"
+    <%= "selected" if @destination.priority == "1" %>
+    >1</option>
     <option
-    value="Calzone"
-    <%= "selected" if @order.topping == "Calzone" %>
-    >Calzone</option>
+    value="2"
+    <%= "selected" if @destination.priority == "2" %>
+    >2</option>
+    <option
+    value="3"
+    <%= "selected" if @destination.priority == "3" %>
+    >3</option>
+    <option
+    value="4"
+    <%= "selected" if @destination.priority == "4" %>
+    >4</option>
+    <option
+    value="5"
+    <%= "selected" if @destination.priority == "5" %>
+    >5</option>
+    <option
+    value="6"
+    <%= "selected" if @destination.priority == "6" %>
+    >6</option>
+    <option
+    value="7"
+    <%= "selected" if @destination.priority == "7" %>
+    >7</option>
+    <option
+    value="8"
+    <%= "selected" if @destination.priority == "8" %>
+    >8</option>
+    <option
+    value="9"
+    <%= "selected" if @destination.priority == "9" %>
+    >9</option>
+    <option
+    value="10"
+    <%= "selected" if @destination.priority == "10" %>
+    >10</option>
   </select>
 
-  <label for="quantity-field">Quantity:</label>
+  <label for="reason-to-go-field">Reason to Go:</label>
   <input
-  type="number"
-  name="quantity"
-  id="quantity-field"
-  value="<%= @order.quantity() %>"
+  type="text"
+  name="reason-to-go"
+  id="reason-to-go-field"
+  value="<%= @destination.reason_to_go() %>"
   />
 
-  <input type='submit' value="Edit Order">
+  <label for="travel_method-field">Travel Method:</label>
+  <input
+  type="text"
+  name="travel_method"
+  id="travel-method-field"
+  value="<%= @destination.travel_method() %>"
+  />
+
+  <label for="visited_or_not-field">Already Visited:</label>
+  <input
+  type="boolean"
+  name="visited_or_not"
+  id="visited_or_not-field"
+  value="<%= @destination.visited_or_not() %>"
+  />
+
+  <input type='submit' value="Edit Destination">
 </form>

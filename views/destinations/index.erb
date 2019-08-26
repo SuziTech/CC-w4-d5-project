@@ -1,9 +1,9 @@
 <% @destinations.each do |destination| %>
   <p>Name: <%= destination.name() %></p>
-  <p>Location: <%= destination.location %></p>
-  <p>Priority: <%= destination.priority %></p>
-  <p>Reason to Go: <%= destination.reason_to_go %></p>
-  <p>Travel Method: <%= destination.travel_method %></p>
-  <p>Already Visited: <%= destination.visited_or_not %>
+  <p>Location: <%= destination.location() %>
+  <p>Priority: <%= destination.priority() %></p>
+  <p>Reason to Go: <%= destination.reason_to_go() %></p>
+  <p>Travel Method: <%= destination.travel_method() %></p>
+  <p>Already Visited: <%= destination.visited_or_not() %>
   <hr />
 <% end %>

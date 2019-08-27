@@ -2,14 +2,14 @@ require_relative('../db/sql_runner')
 
 class Experience
 
-  attr_accessor :name, :description, :travel_date, :destination_id
+  attr_accessor :name, :description, :visit_date, :destination_id
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
-    @travel_date = options['travel_date']
+    @visit_date = options['visit_date']
     @destination_id = options['destination_id'].to_i
   end
 
@@ -18,7 +18,7 @@ class Experience
     (
       name,
       description,
-      travel_date,
+      visit_date,
       destination_id
     )
     VALUES
@@ -26,7 +26,7 @@ class Experience
       $1, $2, $3, $4
     )
     RETURNING *"
-    values = [@name, @description, @travel_date, @destination_id]
+    values = [@name, @description, @visit_date, @destination_id]
     experience_data = SqlRunner.run(sql, values)
     @id = experience_data.first()['id'].to_i
   end
@@ -37,14 +37,14 @@ class Experience
     (
       name,
       description,
-      travel_date,
+      visit_date,
       destination_id
     ) =
     (
       $1, $2, $3, $4
     )
     WHERE id = $5"
-    values = [@name, @description, @travel_date, @destination_id]
+    values = [@name, @description, @visit_date, @destination_id]
     SqlRunner.run( sql, values )
   end
 

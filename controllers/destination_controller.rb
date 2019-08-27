@@ -30,7 +30,7 @@ end
 
 get '/destinations/:id/edit' do # edit
   @destination = Destination.find( params[:id] )
-  erb( :'destinations/id/edit' )
+  erb( :'destinations/edit' )
 end
 
 post '/destinations/:id' do # update

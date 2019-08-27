@@ -77,4 +77,14 @@ class Destination
     return result
   end
 
+  def self.fuzzy_search( string )
+    sql = "SELECT * FROM destinations
+    WHERE name LIKE '%#{string}%'
+    OR location LIKE '%#{string}%';"
+    # values = [string]
+    destination_data = SqlRunner.run( sql)
+    result = destination_data.map { |destination_datum| Destination.new( destination_datum) }
+    return result
+  end
+
 end

@@ -1,39 +1,26 @@
-<form method="post" action="/pizza-orders/<%= @order.id %>">
-  <label for="first-name-field">First Name:</label>
+<form method="post" action="/experiences/<%= @experience.id %>">
+  <label for="name-field">Experience Name:</label>
   <input
   type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @order.first_name %>"
+  name="name"
+  id="name-field"
+  value="<%= @experience.name %>"
   />
 
-  <label for="last-name-field">Last Name:</label>
+  <label for="description-field">Description:</label>
   <input
   type="text"
-  name="last_name"
-  id="last-name-field"
-  value="<%= @order.last_name %>"
+  name="description"
+  id="description-field"
+  value="<%= @experience.description %>"
   />
 
-  <label for="pizza-selection">Select a pizza:</label>
-  <select name="topping" id="pizza-selection">
-    <option
-    value="Margherita"
-    <%= "selected" if @order.topping == "Margherita" %>
-    >Margherita</option>
-    <option
-    value="Calzone"
-    <%= "selected" if @order.topping == "Calzone" %>
-    >Calzone</option>
-  </select>
-
-  <label for="quantity-field">Quantity:</label>
+  <label for="visit_date-field">Already Visited:</label>
   <input
-  type="number"
-  name="quantity"
-  id="quantity-field"
-  value="<%= @order.quantity() %>"
+  type="date"
+  name="visit_date"
+  id="visit_date-field"
+  value="<%= @experience.visit_date() %>"
   />
 
-  <input type='submit' value="Edit Order">
 </form>

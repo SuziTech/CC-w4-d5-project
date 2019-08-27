@@ -34,5 +34,12 @@
     <option value="10">10</option>
   </select> -->
 
+  <label for="destination-selection">Select a destination:</label>
+  <select name="destination_id" id="destination-selection">
+    <% @destinations.each { |destination| %>
+    <option value=<%= destination.id %>><%= destination.name %></<option>
+    <% } %>
+  </select>
+
   <input type="submit" value="Create Experience">
 </form>

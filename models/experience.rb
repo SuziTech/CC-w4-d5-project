@@ -44,7 +44,7 @@ class Experience
       $1, $2, $3, $4
     )
     WHERE id = $5"
-    values = [@name, @description, @visit_date, @destination_id]
+    values = [@name, @description, @visit_date, @destination_id, @id]
     SqlRunner.run( sql, values )
   end
 

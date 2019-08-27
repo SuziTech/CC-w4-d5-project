@@ -15,12 +15,22 @@
   value="<%= @experience.description %>"
   />
 
-  <label for="visit_date-field">Already Visited:</label>
+  <label for="visit_date-field">Date Visited:</label>
   <input
   type="date"
   name="visit_date"
   id="visit_date-field"
   value="<%= @experience.visit_date() %>"
   />
+
+  <label for="destination-selection">Select a destination:</label>
+  <select name="destination_id" id="destination-selection">
+    <% @destinations.each { |destination| %>
+    <option value=<%= destination.id %>><%= destination.name %></<option>
+    <% } %>
+  </select>
+
+
+  <input type='submit' value="Edit Experience">
 
 </form>

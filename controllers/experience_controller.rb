@@ -2,7 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/reloader' )
 require( 'pry' )
 
-# require_relative( '../models/destination' )
+require_relative( '../models/destination' )
 require_relative( '../models/experience' )
 # require_relative( '../models/travel' )
 # require_relative( '../models/experience' )
@@ -14,6 +14,7 @@ get '/experiences' do # index
 end
 
 get '/experiences/new' do # new
+  @destinations = Destination.all()
   erb( :'experiences/new' )
 end
 
@@ -30,7 +31,8 @@ end
 
 get '/experiences/:id/edit' do # edit
   @experience = Experience.find( params[:id] )
-  erb( :'experiences/id/edit' )
+  @destinations = Destination.all()
+  erb( :'experiences/edit' )
 end
 
 post '/experiences/:id' do # update

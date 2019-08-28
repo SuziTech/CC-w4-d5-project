@@ -1,87 +1,91 @@
-<form method="post" action="/destinations/<%= @destination.id %>">
-  <label for="name-field">Destination Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @destination.name %>"
-  />
+<div class="form">
 
-  <label for="location-field">Location:</label>
-  <input
-  type="text"
-  name="location"
-  id="location-field"
-  value="<%= @destination.location %>"
-  />
+  <form method="post" action="/destinations/<%= @destination.id %>">
+    <label for="name-field">Destination Name:</label>
+    <input
+    type="text"
+    name="name"
+    id="name-field"
+    value="<%= @destination.name %>"
+    />
 
-  <label for="priority-selection">Select a priority:</label>
-  <select name="priority" id="priority-selection">
-    <option
-    value="1"
-    <%= "selected" if @destination.priority == "1" %>
-    >1</option>
-    <option
-    value="2"
-    <%= "selected" if @destination.priority == "2" %>
-    >2</option>
-    <option
-    value="3"
-    <%= "selected" if @destination.priority == "3" %>
-    >3</option>
-    <option
-    value="4"
-    <%= "selected" if @destination.priority == "4" %>
-    >4</option>
-    <option
-    value="5"
-    <%= "selected" if @destination.priority == "5" %>
-    >5</option>
-    <option
-    value="6"
-    <%= "selected" if @destination.priority == "6" %>
-    >6</option>
-    <option
-    value="7"
-    <%= "selected" if @destination.priority == "7" %>
-    >7</option>
-    <option
-    value="8"
-    <%= "selected" if @destination.priority == "8" %>
-    >8</option>
-    <option
-    value="9"
-    <%= "selected" if @destination.priority == "9" %>
-    >9</option>
-    <option
-    value="10"
-    <%= "selected" if @destination.priority == "10" %>
-    >10</option>
-  </select>
+    <label for="location-field">Location:</label>
+    <input
+    type="text"
+    name="location"
+    id="location-field"
+    value="<%= @destination.location %>"
+    />
 
-  <label for="reason_to_go-field">Reason to Go:</label>
-  <input
-  type="text"
-  name="reason_to_go"
-  id="reason_to_go-field"
-  value="<%= @destination.reason_to_go() %>"
-  />
+    <label for="priority-selection">Select a priority:</label>
+    <select name="priority" id="priority-selection">
+      <option
+      value="1"
+      <%= "selected" if @destination.priority == "1" %>
+      >1</option>
+      <option
+      value="2"
+      <%= "selected" if @destination.priority == "2" %>
+      >2</option>
+      <option
+      value="3"
+      <%= "selected" if @destination.priority == "3" %>
+      >3</option>
+      <option
+      value="4"
+      <%= "selected" if @destination.priority == "4" %>
+      >4</option>
+      <option
+      value="5"
+      <%= "selected" if @destination.priority == "5" %>
+      >5</option>
+      <option
+      value="6"
+      <%= "selected" if @destination.priority == "6" %>
+      >6</option>
+      <option
+      value="7"
+      <%= "selected" if @destination.priority == "7" %>
+      >7</option>
+      <option
+      value="8"
+      <%= "selected" if @destination.priority == "8" %>
+      >8</option>
+      <option
+      value="9"
+      <%= "selected" if @destination.priority == "9" %>
+      >9</option>
+      <option
+      value="10"
+      <%= "selected" if @destination.priority == "10" %>
+      >10</option>
+    </select>
 
-  <label for="travel_method-field">Travel Method:</label>
-  <input
-  type="text"
-  name="travel_method"
-  id="travel_method-field"
-  value="<%= @destination.travel_method() %>"
-  />
+    <label for="reason_to_go-field">Reason to Go:</label>
+    <input
+    type="text"
+    name="reason_to_go"
+    id="reason_to_go-field"
+    value="<%= @destination.reason_to_go() %>"
+    />
 
-  <label for="visited_or_not-field">Already Visited:</label>
-  <input
-  type="boolean"
-  name="visited_or_not"
-  id="visited_or_not-field"
-  value="<%= @destination.visited_or_not() %>"
-  />
+    <label for="travel_method-field">Travel Method:</label>
+    <input
+    type="text"
+    name="travel_method"
+    id="travel_method-field"
+    value="<%= @destination.travel_method() %>"
+    />
 
-  <input type='submit' value="Edit Destination">
-</form>
+    <label for="visited_or_not-field">Already Visited:</label>
+    <input
+    type="boolean"
+    name="visited_or_not"
+    id="visited_or_not-field"
+    value="<%= @destination.visited_or_not() %>"
+    />
+
+    <input type='submit' value="Edit Destination">
+  </form>
+
+</div>

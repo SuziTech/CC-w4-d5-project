@@ -32,10 +32,35 @@ background-color: #D2FAFB;
 
 h1 {
   font-family: 'Rubik', sans-serif;
-  font-size: 24px
+  font-size: 24px;
+  text-align: center;
 }
 
 body {
   font-family: 'Rubik', sans-serif;
-  font-size: 16px
+  font-size: 16px;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+body {
+    text-align: center;
+}
+
+p[already-visited="t"]{
+  border-width: thick;
+  border-color: #6BC5D2;
+  color: #6BC5D2;
+}
+
+p[already-visited="f"]{
+  border-width: thick;
+  border-color: #B5525C;
+  color: #B5525C;
 }

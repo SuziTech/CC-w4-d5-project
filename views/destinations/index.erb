@@ -1,11 +1,11 @@
 <% if @destinations != [] %>
   <% @destinations.each do |destination| %>
     <p>Name: <%= destination.name() %></p>
-    <p>Location: <%= destination.location() %>
+    <p>Location: <%= destination.location() %></p>
     <p>Priority: <%= destination.priority() %></p>
     <p>Reason to Go: <%= destination.reason_to_go() %></p>
     <p>Travel Method: <%= destination.travel_method() %></p>
-    <p>Already Visited: <%= destination.visited_or_not() %>
+    <p id="already-visited" already-visited=<%= destination.visited_or_not() %>>Already Visited: <%= destination.visited_or_not() %></p>
       <form method="get" action="/destinations/<%= destination.id %>/edit">
         <input type="submit" value="Edit Destination"/>
       </form>

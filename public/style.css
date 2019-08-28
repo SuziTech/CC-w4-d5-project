@@ -1,4 +1,41 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color: #105E62;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+body {
+background-color: #D2FAFB;
+}
+
 h1 {
   font-family: 'Rubik', sans-serif;
-  font-size: 14px
+  font-size: 24px
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px
 }

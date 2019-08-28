@@ -2,5 +2,11 @@
   <p>Name: <%= experience.name() %></p>
   <p>Description: <%= experience.description %></p>
   <p>visit_date: <%= experience.visit_date %></p>
+  <form method="get" action="/experiences/<%= experience.id %>/edit">
+    <input type="submit" value="Edit Experience"/>
+  </form>
+  <form method="post" action="/experiences/<%= experience.id %>/delete">
+    <input type="submit" value="Delete Experience"/>
+  </form>
   <hr />
 <% end %>

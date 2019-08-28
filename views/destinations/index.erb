@@ -6,6 +6,12 @@
     <p>Reason to Go: <%= destination.reason_to_go() %></p>
     <p>Travel Method: <%= destination.travel_method() %></p>
     <p>Already Visited: <%= destination.visited_or_not() %>
+      <form method="get" action="/destinations/<%= destination.id %>/edit">
+        <input type="submit" value="Edit Destination"/>
+      </form>
+      <form method="post" action="/destinations/<%= destination.id %>/delete">
+        <input type="submit" value="Delete Destination"/>
+      </form>
     <hr />
   <% end %>
 <% end %>

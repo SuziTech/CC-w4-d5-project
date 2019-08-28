@@ -4,7 +4,12 @@
 <p>Reason to Go: <%= @destination.reason_to_go %></p>
 <p>Travel Method: <%= @destination.travel_method %></p>
 <p>Already Visited: <%= @destination.visited_or_not %></p>
-<p><a href="/destinations/<%= @destination.id %>/edit">Edit Destination</a></p>
+<form method="post" action="/destinations/<%= @destination.id %>/edit">
+  <input type="submit" value="Edit Destination"/>
+</form>
 <form method="post" action="/destinations/<%= @destination.id %>/delete">
   <input type="submit" value="Delete Destination"/>
+</form>
+<form method="post" action="/destinations/<%= @destination.id %>/create">
+  <input type="submit" value="Create Destination"/>
 </form>

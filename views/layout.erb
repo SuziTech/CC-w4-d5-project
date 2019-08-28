@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Love My World!</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
 
     <section id="content">
       <%= yield %>
     </section>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/destinations">Destinations</a></li>
+      <li><a href="/experiences">Experiences</a></li>
+      <li><a href="/destinations/new">Create a Destination</a></li>
+      <li><a href="/experiences/new">Create an Experience</a></li>
+    </ul>
 
   </body>
 </html>

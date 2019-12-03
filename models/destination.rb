@@ -77,14 +77,21 @@ class Destination
     return result
   end
 
+# Implementation of the Fuzzy Search algorithm in the program...
+
   def self.fuzzy_search( string )
+    # multi-clause sql select statement to retrieve all records from the
+    # database which are 'LIKE' the users criteria passed into the Method
+    # as the parameter 'string'
     sql = "SELECT * FROM destinations
     WHERE name LIKE '%#{string}%'
     OR location LIKE '%#{string}%'
     OR reason_to_go LIKE '%#{string}%';"
-    # values = [string]
+    # Execute the sql statement against the database
     destination_data = SqlRunner.run( sql)
+    # Map the returned data to a suitable format to use
     result = destination_data.map { |destination_datum| Destination.new( destination_datum) }
+    # Return the result from the method
     return result
   end
 
